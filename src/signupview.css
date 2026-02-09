@@ -1,0 +1,133 @@
+/* --- 회원가입 전용 독립 스타일 (signupview.css) --- */
+
+.signup-page-root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffc30b;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  /* 가로 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 화살표: 왼쪽 상단 고정 */
+.signup-back-arrow {
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  top: 17px;
+  left: 33px;
+  opacity: 0.4;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.signup-back-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+/* ON-Gil 타이틀: 더 아래로 (기존 120px -> 180px) */
+.signup-title {
+  position: absolute;
+  top: 180px;
+  font-weight: 700;
+  font-size: 96px;
+  color: #f0eee9;
+  margin: 0;
+}
+
+/* 입력창 공통 배경 */
+.signup-input-field {
+  position: absolute;
+  width: 591px;
+  height: 112px;
+  background: #fffdfd;
+  border-radius: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* 필드 위치: 타이틀과 버튼 사이 간격을 좁히기 위해 더 내림 */
+.name-pos {
+  top: 340px;
+}
+.id-pos {
+  top: 480px;
+}
+.pw-pos {
+  top: 620px;
+}
+
+/* 아이콘 원 */
+.signup-icon-circle {
+  width: 95px;
+  height: 95px;
+  background: #f0eee9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 5px;
+}
+
+.signup-icon-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* 텍스트 입력창 */
+.signup-text-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 35px;
+  color: #000000;
+  padding-left: 20px;
+}
+
+.signup-text-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* 중복 메시지 위치: ID와 PW 사이 */
+.signup-error-msg {
+  position: absolute;
+  top: 592px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff0000;
+  text-align: center;
+}
+
+/* 다음 버튼: 위치 유지 (820px) */
+.signup-submit-btn {
+  position: absolute;
+  width: 304px;
+  height: 87px;
+  top: 820px;
+  background: #f0eee9;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-btn-text {
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+}
