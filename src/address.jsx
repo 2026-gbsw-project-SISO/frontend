@@ -10,7 +10,6 @@ export default function Address() {
   const [isError, setIsError] = useState(false);
 
   const handleNext = () => {
-    // 주소가 비어있거나 특정 조건(예: 테스트용 'error')일 때 에러 표시
     if (addressValue.trim() === "" || addressValue === "error") {
       setIsError(true);
     } else {
@@ -21,14 +20,12 @@ export default function Address() {
 
   return (
     <div className="address-page-root">
-      {/* 뒤로가기 화살표 */}
       <div className="address-back-arrow" onClick={() => navigate(-1)}>
         <img src={backArrowImg} alt="뒤로가기" className="address-back-img" />
       </div>
 
       <h1 className="address-title">ON-Gil</h1>
 
-      {/* 주소 입력 필드 그룹 */}
       <div className="address-input-container">
         <div className="address-icon-box">
           <img src={addressIcon} alt="icon" className="address-icon-img" />
@@ -46,10 +43,8 @@ export default function Address() {
         />
       </div>
 
-      {/* 에러 메시지: 조건부 렌더링 */}
       {isError && <div className="address-error-text">없는 주소지 입니다.</div>}
 
-      {/* 다음 버튼 */}
       <button className="address-next-btn" onClick={handleNext}>
         <span className="address-next-text">다음</span>
       </button>
