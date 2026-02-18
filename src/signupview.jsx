@@ -9,12 +9,29 @@ import backArrowImg from "./assets/images/3.png";
 
 export default function SignupView() {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
 
   const handleNext = () => {
+    if (name.trim() === "") {
+      alert("이름을 입력해주세요.");
+      return;
+    }
+    if (userId.trim() === "") {
+      alert("아이디를 입력해주세요.");
+      return;
+    }
+    if (password.trim() === "") {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
+
     if (userId === "admin") {
       setIsDuplicate(true);
+      alert("중복된 아이디입니다. 다른 아이디를 입력해주세요.");
     } else {
       setIsDuplicate(false);
       navigate("/address");
@@ -38,7 +55,13 @@ export default function SignupView() {
             style={{ transform: "rotate(-180deg)" }}
           />
         </div>
-        <input type="text" placeholder="NAME" className="signup-text-input" />
+        <input
+          type="text"
+          placeholder="NAME"
+          className="signup-text-input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
 
       <div className="signup-input-field id-pos">
@@ -65,7 +88,13 @@ export default function SignupView() {
         <div className="signup-icon-circle">
           <img src={pwIcon} alt="PW" className="signup-icon-img" />
         </div>
-        <input type="password" placeholder="PW" className="signup-text-input" />
+        <input
+          type="password"
+          placeholder="PW"
+          className="signup-text-input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </div>
 
       <button className="signup-submit-btn" onClick={handleNext}>

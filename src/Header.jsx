@@ -8,7 +8,6 @@ export default function Header() {
 
   return (
     <header className="dash-header">
-      {/* 🔥 로고 클릭하면 무조건 Dashboard("/") */}
       <div
         className="dash-logo"
         onClick={() => navigate("/dashboard")}
@@ -18,12 +17,10 @@ export default function Header() {
       </div>
 
       <div className="header-right">
-        {/* 로그아웃 후 로그인 페이지로 가는 구조라면 "/" 유지 */}
         <button className="logout-btn" onClick={() => navigate("/")}>
           로그아웃
         </button>
 
-        {/* 옵션 페이지 이동 */}
         <img
           src={menuIcon}
           alt="menu"

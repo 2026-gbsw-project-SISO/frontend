@@ -6,29 +6,33 @@ import LoginView from "./Login";
 import SignupView from "./Signupview";
 import Address from "./Address";
 import Dashboard from "./Dashboard";
-import Option from "./Option"; // 🔥 옵션 페이지 추가했으면 필요
+import Option from "./Option";
+
+// 신규 페이지 임포트
+import AiLog from "./AiLog";
+import EventLog from "./EventLog";
+import SystemSetting from "./SystemSetting";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* 시작 페이지 */}
+        {/* 메인 화면 */}
         <Route path="/" element={<OnGil />} />
 
-        {/* 로그인 */}
+        {/* 로그인 및 회원가입 흐름 */}
         <Route path="/login" element={<LoginView />} />
-
-        {/* 회원가입 */}
         <Route path="/signupview" element={<SignupView />} />
-
-        {/* 주소 입력 */}
         <Route path="/address" element={<Address />} />
 
-        {/* 대시보드 */}
+        {/* 서비스 메인 화면 */}
         <Route path="/dashboard" element={<Dashboard />} />
-
-        {/* 옵션 페이지 */}
         <Route path="/option" element={<Option />} />
+
+        {/* 옵션(설정) 카드별 상세 페이지 */}
+        <Route path="/ai-log" element={<AiLog />} />
+        <Route path="/event-log" element={<EventLog />} />
+        <Route path="/system-setting" element={<SystemSetting />} />
       </Routes>
     </Router>
   );
