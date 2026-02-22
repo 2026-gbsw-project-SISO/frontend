@@ -12,7 +12,9 @@
   flex: 1;
   position: relative;
   padding: 0 40px;
+  display: flex; /* flex 추가 */
   flex-direction: column;
+  align-items: center; /* 내부 요소들 중앙 정렬을 위해 추가 */
 }
 
 .option-top-bar {
@@ -71,10 +73,11 @@
   margin-right: 50px;
 }
 
+/* --- 수정된 부분: 카드들을 중앙으로 모으기 --- */
 .card-group {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center; /* space-between 대신 center로 변경 */
+  gap: 60px; /* 버튼 사이의 간격 (중앙으로 모으는 정도) */
   margin-top: 50px;
   width: 100%;
   padding: 0 20px;
@@ -82,8 +85,8 @@
 }
 
 .option-card {
-  flex: 1;
-  max-width: 480px;
+  /* flex: 1을 유지하되, 크기가 너무 퍼지지 않게 조절 */
+  width: 418px; /* 고정 크기 혹은 적절한 너비 설정 */
   height: 625px;
   border-radius: 40px;
   display: flex;
@@ -93,7 +96,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  flex-shrink: 0; /* 중앙 정렬 시 찌그러짐 방지 */
 }
+/* -------------------------------------- */
 
 .option-card:hover {
   transform: translateY(-15px);
