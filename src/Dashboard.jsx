@@ -33,9 +33,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="map-section">
-            <div className="map-inner">지도 로딩 중...</div>
-          </div>
+          <div className="map-section">지도 로딩 중...</div>
         </section>
 
         <div className="vertical-line"></div>

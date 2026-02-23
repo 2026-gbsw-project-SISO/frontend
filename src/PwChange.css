@@ -1,0 +1,115 @@
+.verify-root,
+.system-setting-root,
+.name-change-root,
+.change-root,
+.name-change-root,
+.addr-change-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.pw-change-root {
+  width: 100vw;
+  height: 100vh;
+  background: #ffc30b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.back-icon {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.back-icon.flipped {
+  transform: scaleX(-1);
+}
+
+.pw-change-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 80px;
+  color: white;
+  margin-bottom: 60px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-box {
+  width: 800px;
+  height: 140px;
+  background: white;
+  border-radius: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: #f0eee9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-icon {
+  width: 60px;
+}
+
+.main-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.next-action-btn {
+  margin-top: 40px;
+  width: 300px;
+  height: 80px;
+  background: #234921;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.back-icon-top {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+.verify-btn {
+  white-space: nowrap;
+  font-size: 28px;
+}

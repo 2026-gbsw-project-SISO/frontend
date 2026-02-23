@@ -2,27 +2,27 @@
   width: 100vw;
   height: 100vh;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
   font-family: "Inter", sans-serif;
 }
 
 .option-container {
-  flex: 1;
-  position: relative;
-  padding: 0 40px;
-  display: flex; /* flex 추가 */
+  width: 100%;
+  height: calc(100% - 124px);
+  display: flex;
   flex-direction: column;
-  align-items: center; /* 내부 요소들 중앙 정렬을 위해 추가 */
 }
 
 .option-top-bar {
   display: flex;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 49px;
+  padding-left: 66px;
   width: 100%;
-  padding-left: 20px;
+  box-sizing: border-box;
 }
 
 .profile-card {
@@ -32,19 +32,18 @@
   border-radius: 60px;
   display: flex;
   align-items: center;
-  padding-left: 11px;
-  box-sizing: border-box;
   flex-shrink: 0;
 }
 
 .profile-icon-circle {
   width: 86px;
   height: 82px;
+  margin-left: 11px;
   background: #f0eee9;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .profile-img {
@@ -52,8 +51,8 @@
   height: 41px;
 }
 
-.profile-text {
-  margin-left: 23px;
+.profile-text-group {
+  margin-left: 20px;
 }
 
 .user-id,
@@ -64,69 +63,52 @@
 }
 
 .policy-text {
-  flex: 1;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 130%;
+  font-size: 24px;
   color: #000;
-  text-align: center;
-  margin-right: 50px;
+  text-align: left;
+  margin: 0;
+  margin-left: 40px;
+  white-space: nowrap;
 }
 
-/* --- 수정된 부분: 카드들을 중앙으로 모으기 --- */
-.card-group {
+.card-group-wrapper {
+  flex: 1;
   display: flex;
-  justify-content: center; /* space-between 대신 center로 변경 */
-  gap: 60px; /* 버튼 사이의 간격 (중앙으로 모으는 정도) */
-  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 66px;
   width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .option-card {
-  /* flex: 1을 유지하되, 크기가 너무 퍼지지 않게 조절 */
-  width: 418px; /* 고정 크기 혹은 적절한 너비 설정 */
+  width: 418px;
   height: 625px;
   border-radius: 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  flex-shrink: 0; /* 중앙 정렬 시 찌그러짐 방지 */
+  transition: transform 0.2s ease;
 }
-/* -------------------------------------- */
 
 .option-card:hover {
-  transform: translateY(-15px);
+  transform: translateY(-10px);
 }
 
-.pink {
+.pink-card {
   background: #f4b9b8;
 }
-.orange {
+.orange-card {
   background: #f9dbbb;
 }
-.green {
+.green-card {
   background: #c7e9ca;
 }
 
 .card-title {
   font-weight: 700;
-  font-size: 45px;
-  line-height: 130%;
+  font-size: 40px;
   text-align: center;
   color: #000;
-}
-
-.card-hex {
-  position: absolute;
-  bottom: 80px;
-  font-weight: 500;
-  font-size: 18px;
-  color: #333;
-  opacity: 0.6;
 }

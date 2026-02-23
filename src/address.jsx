@@ -16,17 +16,18 @@ export default function Address() {
     }
 
     setError(false);
-    alert("회원가입이 완료되었습니다!");
-    navigate("/");
+    alert("회원가입이 완료되었습니다! 로그인 해주세요.");
+    navigate("/login");
   };
 
   return (
     <div className="address-page-root">
-      <div
-        className="address-back-arrow"
-        onClick={() => navigate("/signupview")}
-      >
-        <img src={backArrowImg} alt="뒤로가기" className="address-back-img" />
+      <div className="address-back-arrow" onClick={() => navigate(-1)}>
+        <img
+          src={backArrowImg}
+          alt="뒤로가기"
+          className="address-back-img flipped"
+        />
       </div>
 
       <h1 className="address-title">ON-Gil</h1>
@@ -47,10 +48,10 @@ export default function Address() {
         />
       </div>
 
-      {error && <div className="address-error-text">없는 주소지입니다.</div>}
+      {error && <div className="address-error-text">주소를 입력해주세요.</div>}
 
       <button className="address-next-btn" onClick={handleNext}>
-        <span className="address-next-text">다음</span>
+        <span className="address-next-text">가입완료</span>
       </button>
     </div>
   );

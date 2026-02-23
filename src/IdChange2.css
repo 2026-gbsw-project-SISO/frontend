@@ -1,0 +1,108 @@
+.id-change-root {
+  width: 100vw;
+  height: 100vh;
+  background: #ffc30b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 1. 화살표 더 위로 올리고 좌우 반전 */
+.back-icon {
+  position: absolute;
+  top: 40px; /* 107px에서 40px로 위로 바짝 올림 */
+  left: 40px;
+  width: 60px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* 좌우 반전 효과 */
+.back-icon.flipped {
+  transform: scaleX(-1);
+}
+
+.id-change-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 96px;
+  color: #ffffff;
+  margin-bottom: 80px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.input-box {
+  width: 1000px; /* 전체 박스 조금 더 키움 */
+  height: 165px;
+  background: #fffdfd;
+  border-radius: 85px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+}
+
+/* 2. 이모티콘 겉에 있는 동그라미 크게 키움 */
+.icon-wrapper {
+  width: 140px; /* 기존보다 훨씬 크게 */
+  height: 140px;
+  background: #f0eee9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.input-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.main-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 45px;
+  font-weight: 700;
+  margin-left: 30px;
+  background: transparent;
+}
+
+.verify-btn {
+  width: 280px;
+  height: 100px;
+  background: #d9d9d9;
+  border-radius: 50px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.next-action-btn {
+  margin-top: 60px;
+  width: 320px;
+  height: 90px;
+  background: #f0eee9;
+  border-radius: 60px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+}

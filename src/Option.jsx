@@ -6,7 +6,6 @@ import profileIcon from "./assets/images/1.png";
 
 export default function Option() {
   const navigate = useNavigate();
-
   const userId = "시골소녀";
 
   return (
@@ -19,9 +18,9 @@ export default function Option() {
             <div className="profile-icon-circle">
               <img src={profileIcon} alt="user" className="profile-img" />
             </div>
-            <div className="profile-text">
+            <div className="profile-text-group">
               <span className="user-id">{userId}</span>
-              <span className="fixed-text"> 님</span>
+              <span className="fixed-text">님</span>
             </div>
           </div>
 
@@ -31,8 +30,11 @@ export default function Option() {
           </p>
         </div>
 
-        <div className="card-group">
-          <div className="option-card pink" onClick={() => navigate("/ai-log")}>
+        <div className="card-group-wrapper">
+          <div
+            className="option-card pink-card"
+            onClick={() => navigate("/ai-log")}
+          >
             <div className="card-title">
               AI 인식 결과
               <br />
@@ -41,7 +43,7 @@ export default function Option() {
           </div>
 
           <div
-            className="option-card orange"
+            className="option-card orange-card"
             onClick={() => navigate("/event-log")}
           >
             <div className="card-title">
@@ -52,7 +54,7 @@ export default function Option() {
           </div>
 
           <div
-            className="option-card green"
+            className="option-card green-card"
             onClick={() => navigate("/system-setting")}
           >
             <div className="card-title">

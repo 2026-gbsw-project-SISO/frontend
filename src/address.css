@@ -1,3 +1,20 @@
+.verify-root,
+.system-setting-root,
+.name-change-root,
+.change-root,
+.name-change-root,
+.addr-change-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .address-page-root {
   width: 100vw;
   height: 100vh;

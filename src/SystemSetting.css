@@ -1,0 +1,77 @@
+.verify-root,
+.system-setting-root,
+.name-change-root,
+.change-root,
+.name-change-root,
+.addr-change-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.system-setting-root {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.setting-body {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+
+  max-height: 100%;
+}
+
+.setting-button-card {
+  width: 900px;
+  height: 110px;
+
+  border-radius: 30px;
+  background: #d9d9d9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.setting-button-card:hover {
+  background: #c8c8c8;
+  transform: translateY(-2px);
+}
+
+.setting-button-card:active {
+  transform: scale(0.98);
+}
+
+.setting-button-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #000000;
+}
