@@ -1,10 +1,13 @@
 import React from "react";
+import { Map } from "react-kakao-maps-sdk";
 import "./Dashboard.css";
 import Header from "./Header";
 import totalIcon from "./assets/images/6.png";
 import dangerIcon from "./assets/images/7.png";
 
 export default function Dashboard() {
+  const centerPos = { lat: 33.450701, lng: 126.570667 };
+
   return (
     <div className="dashboard-root">
       <Header />
@@ -33,7 +36,13 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="map-section">지도 로딩 중...</div>
+          <div className="map-section">
+            <Map
+              center={centerPos}
+              style={{ width: "100%", height: "100%" }}
+              level={3}
+            ></Map>
+          </div>
         </section>
 
         <div className="vertical-line"></div>

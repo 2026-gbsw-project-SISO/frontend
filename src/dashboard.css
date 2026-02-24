@@ -167,3 +167,12 @@
   background: #e5aeac;
   color: #501815;
 }
+
+.map-section {
+  flex: 1;
+  background: #e3f2fd;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+}
