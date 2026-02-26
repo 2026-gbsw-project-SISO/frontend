@@ -1,24 +1,38 @@
 import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import idIcon from "./assets/images/1.png";
 import pwIcon from "./assets/images/2.png";
 import backArrowImg from "./assets/images/3.png";
 
-export default function LoginView() {
+export default function Login() {
   const navigate = useNavigate();
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
+  const [loginId, setLoginId] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    if (id.trim() === "" || pw.trim() === "") {
+  const handleLogin = async () => {
+    if (loginId.trim() === "" || password.trim() === "") {
       alert("아이디와 비밀번호를 입력해주세요.");
       return;
     }
 
-    console.log("로그인 시도:", id);
-    navigate("/dashboard");
+    try {
+      const response = await axios.post("http://localhost:8080/auth/login", {
+        username: loginId,
+        password: password,
+      });
+
+      const token = response.data.token;
+      localStorage.setItem("accessToken", token);
+
+      alert("로그인 성공!");
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("로그인 에러:", error);
+      alert("로그인 실패: 아이디 또는 비밀번호를 확인하세요.");
+    }
   };
 
   return (
@@ -37,8 +51,8 @@ export default function LoginView() {
           type="text"
           placeholder="ID"
           className="text-input"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
+          value={loginId}
+          onChange={(e) => setLoginId(e.target.value)}
         />
       </div>
 
@@ -50,8 +64,9 @@ export default function LoginView() {
           type="password"
           placeholder="PW"
           className="text-input"
-          value={pw}
-          onChange={(e) => setPw(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
         />
       </div>
 

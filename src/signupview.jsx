@@ -10,32 +10,23 @@ import backArrowImg from "./assets/images/3.png";
 export default function SignupView() {
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [isDuplicate, setIsDuplicate] = useState(false);
 
   const handleNext = () => {
-    if (name.trim() === "") {
-      alert("이름을 입력해주세요.");
-      return;
-    }
-    if (userId.trim() === "") {
-      alert("아이디를 입력해주세요.");
-      return;
-    }
-    if (password.trim() === "") {
-      alert("비밀번호를 입력해주세요.");
+    if (!username || !userId || !password) {
+      alert("모든 정보를 입력해주세요.");
       return;
     }
 
-    if (userId === "admin") {
-      setIsDuplicate(true);
-      alert("중복된 아이디입니다. 다른 아이디를 입력해주세요.");
-    } else {
-      setIsDuplicate(false);
-      navigate("/address");
-    }
+    navigate("/address", {
+      state: {
+        username: username,
+        id: userId,
+        password: password,
+      },
+    });
   };
 
   return (
@@ -59,8 +50,8 @@ export default function SignupView() {
           type="text"
           placeholder="NAME"
           className="signup-text-input"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
 
@@ -73,16 +64,9 @@ export default function SignupView() {
           placeholder="ID"
           className="signup-text-input"
           value={userId}
-          onChange={(e) => {
-            setUserId(e.target.value);
-            setIsDuplicate(false);
-          }}
+          onChange={(e) => setUserId(e.target.value)}
         />
       </div>
-
-      {isDuplicate && (
-        <div className="signup-error-msg">중복된 아이디입니다.</div>
-      )}
 
       <div className="signup-input-field pw-pos">
         <div className="signup-icon-circle">
@@ -94,6 +78,7 @@ export default function SignupView() {
           className="signup-text-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleNext()}
         />
       </div>
 
